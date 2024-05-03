@@ -36,7 +36,9 @@ with st.sidebar:
 # If both API keys are provided, initialize the vector store and the RAG model
 if pinecone_key and openai_key:
     vector_store = PineconeVectorStore(index_name='rag-db',
-                                  embedding=OpenAIEmbeddings(model='text-embedding-3-small'),
+                                  embedding=OpenAIEmbeddings(
+                                  openai_api_key=openai_key,
+                                  model='text-embedding-3-small'),
                                   namespace="knowledge_base") 
 
     template = get_prompt(instruction, examples, sys_prompt) 
