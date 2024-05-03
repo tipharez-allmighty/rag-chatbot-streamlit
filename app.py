@@ -39,6 +39,7 @@ if pinecone_key and openai_key:
                                   embedding=OpenAIEmbeddings(
                                   openai_api_key=openai_key,
                                   model='text-embedding-3-small'),
+                                  pinecone_api_key=pinecone_key,
                                   namespace="knowledge_base") 
 
     template = get_prompt(instruction, examples, sys_prompt) 
