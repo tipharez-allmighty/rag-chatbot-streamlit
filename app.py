@@ -11,7 +11,7 @@ def get_prompt(instruction, examples, new_system_prompt):
     prompt_template =  SYSTEM_PROMPT + instruction  + "\n" + examples
     return prompt_template
 
-# Delimiters for system prompt
+
 B_SYS, E_SYS = "<<SYS>>\n", "\n<</SYS>>\n\n"
 # System prompt defining the behavior of the assistant
 sys_prompt = """\
@@ -25,7 +25,7 @@ Q: {question}
 A: """
 template = get_prompt(instruction, examples, sys_prompt)
 
-# Streamlit app title
+
 st.title('RAG test bot')
 
 # Sidebar to input API keys
